@@ -24,10 +24,17 @@
     border: 1px solid #252525;
     border-radius: 0.3rem;
     cursor: pointer;
+    transition: border 0.1s, background 0.3s, transform 0.3s;
 
     &:hover {
       background: #38383d;
       border: 1px solid rgba(255, 255, 255, 15%);
     }
+  }
+
+  .active {
+    background: #47474d;
+    border: 1px solid rgba(255, 255, 255, 15%);
+    transform: scale(0.95);
   }
 }

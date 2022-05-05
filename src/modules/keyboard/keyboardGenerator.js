@@ -1,86 +1,85 @@
-import { keyboardButtonCreation } from "./keyboardButton";
-import { keyboardRow } from "./keyboardRow";
+import keyboardButtonCreation from "./keyboardButton";
+import keyboardRow from "./keyboardRow";
 
-export const generateKeyboard = (keyboardWrapper) => {
-
+const generateKeyboard = (keyboardWrapper) => {
   const firstRowKeys = [
-    keyboardButtonCreation("§"),
-    keyboardButtonCreation(1),
-    keyboardButtonCreation(2),
-    keyboardButtonCreation(3),
-    keyboardButtonCreation(4),
-    keyboardButtonCreation(5),
-    keyboardButtonCreation(6),
-    keyboardButtonCreation(7),
-    keyboardButtonCreation(8),
-    keyboardButtonCreation(9),
-    keyboardButtonCreation(0),
-    keyboardButtonCreation("-"),
-    keyboardButtonCreation("+"),
-    keyboardButtonCreation("Backspace"),
+    keyboardButtonCreation("`", "Backquote"),
+    keyboardButtonCreation(1, "Digit1"),
+    keyboardButtonCreation(2, "Digit2"),
+    keyboardButtonCreation(3, "Digit3"),
+    keyboardButtonCreation(4, "Digit4"),
+    keyboardButtonCreation(5, "Digit5"),
+    keyboardButtonCreation(6, "Digit6"),
+    keyboardButtonCreation(7, "Digit7"),
+    keyboardButtonCreation(8, "Digit8"),
+    keyboardButtonCreation(9, "Digit9"),
+    keyboardButtonCreation(0, "Digit0"),
+    keyboardButtonCreation("-", "Minus"),
+    keyboardButtonCreation("=", "Equal"),
+    keyboardButtonCreation("Backspace", "Backspace"),
   ];
 
   const secondRowKeys = [
-    keyboardButtonCreation("Tab"),
-    keyboardButtonCreation("Q"),
-    keyboardButtonCreation("W"),
-    keyboardButtonCreation("E"),
-    keyboardButtonCreation("R"),
-    keyboardButtonCreation("T"),
-    keyboardButtonCreation("Y"),
-    keyboardButtonCreation("U"),
-    keyboardButtonCreation("I"),
-    keyboardButtonCreation("O"),
-    keyboardButtonCreation("P"),
-    keyboardButtonCreation("["),
-    keyboardButtonCreation("]"),
-    keyboardButtonCreation("Enter"),
+    keyboardButtonCreation("Tab", "Tab"),
+    keyboardButtonCreation("Q", "KeyQ"),
+    keyboardButtonCreation("W", "KeyW"),
+    keyboardButtonCreation("E", "KeyE"),
+    keyboardButtonCreation("R", "KeyR"),
+    keyboardButtonCreation("T", "KeyT"),
+    keyboardButtonCreation("Y", "KeyY"),
+    keyboardButtonCreation("U", "KeyU"),
+    keyboardButtonCreation("I", "KeyI"),
+    keyboardButtonCreation("O", "KeyO"),
+    keyboardButtonCreation("P", "KeyP"),
+    keyboardButtonCreation("[", "BracketLeft"),
+    keyboardButtonCreation("]", "BracketRight"),
+    keyboardButtonCreation("Enter", "Enter"),
   ];
 
   const thirdRowKeys = [
-    keyboardButtonCreation("CapsLock"),
-    keyboardButtonCreation("A"),
-    keyboardButtonCreation("S"),
-    keyboardButtonCreation("D"),
-    keyboardButtonCreation("F"),
-    keyboardButtonCreation("G"),
-    keyboardButtonCreation("H"),
-    keyboardButtonCreation("J"),
-    keyboardButtonCreation("K"),
-    keyboardButtonCreation("L"),
-    keyboardButtonCreation(";"),
-    keyboardButtonCreation("'"),
-    keyboardButtonCreation("\\"),
+    keyboardButtonCreation("CapsLock", "CapsLock"),
+    keyboardButtonCreation("A", "KeyA"),
+    keyboardButtonCreation("S", "KeyS"),
+    keyboardButtonCreation("D", "KeyD"),
+    keyboardButtonCreation("F", "KeyF"),
+    keyboardButtonCreation("G", "KeyG"),
+    keyboardButtonCreation("H", "KeyH"),
+    keyboardButtonCreation("J", "KeyJ"),
+    keyboardButtonCreation("K", "KeyK"),
+    keyboardButtonCreation("L", "KeyL"),
+    keyboardButtonCreation(";", "Semicolon"),
+    keyboardButtonCreation("'", "Quote"),
+    keyboardButtonCreation("\\", "Backslash"),
   ];
 
   const fourthRowKeys = [
-    keyboardButtonCreation("Shift"),
-    keyboardButtonCreation("`"),
-    keyboardButtonCreation("Z"),
-    keyboardButtonCreation("X"),
-    keyboardButtonCreation("C"),
-    keyboardButtonCreation("V"),
-    keyboardButtonCreation("B"),
-    keyboardButtonCreation("N"),
-    keyboardButtonCreation("M"),
-    keyboardButtonCreation(","),
-    keyboardButtonCreation("."),
-    keyboardButtonCreation("/"),
-    keyboardButtonCreation("Shift"),
+    keyboardButtonCreation("Shift", "ShiftLeft"),
+    keyboardButtonCreation("\\", "IntlBackslash"),
+    keyboardButtonCreation("Z", "KeyZ"),
+    keyboardButtonCreation("X", "KeyX"),
+    keyboardButtonCreation("C", "KeyC"),
+    keyboardButtonCreation("V", "KeyV"),
+    keyboardButtonCreation("B", "KeyB"),
+    keyboardButtonCreation("N", "KeyN"),
+    keyboardButtonCreation("M", "KeyM"),
+    keyboardButtonCreation(",", "Comma"),
+    keyboardButtonCreation(".", "Period"),
+    keyboardButtonCreation("/", "Slash"),
+    keyboardButtonCreation("Shift", "ShiftRight"),
   ];
 
   const fifthRowKeys = [
     keyboardButtonCreation("fn"),
-    keyboardButtonCreation("control"),
-    keyboardButtonCreation("option"),
-    keyboardButtonCreation("command"),
-    keyboardButtonCreation("space"),
-    keyboardButtonCreation("command"),
-    keyboardButtonCreation("option"),
-    keyboardButtonCreation("<"),
-    keyboardButtonCreation("^"),
-    keyboardButtonCreation(">"),
-    keyboardButtonCreation("v"),
+    keyboardButtonCreation("control", "ControlLeft"),
+    keyboardButtonCreation("option", "AltLeft"),
+    keyboardButtonCreation("command", "MetaLeft"),
+    keyboardButtonCreation("space", "Space"),
+    keyboardButtonCreation("command", "MetaRight"),
+    keyboardButtonCreation("option", "AltRight"),
+    keyboardButtonCreation("<", "ArrowLeft"),
+    keyboardButtonCreation("^", "ArrowUp"),
+    keyboardButtonCreation(">", "ArrowRight"),
+    keyboardButtonCreation("v", "ArrowDown"),
   ];
 
   keyboardWrapper.append(keyboardRow(firstRowKeys));
@@ -88,4 +87,6 @@ export const generateKeyboard = (keyboardWrapper) => {
   keyboardWrapper.append(keyboardRow(thirdRowKeys));
   keyboardWrapper.append(keyboardRow(fourthRowKeys));
   keyboardWrapper.append(keyboardRow(fifthRowKeys));
-}
+};
+
+export default generateKeyboard;

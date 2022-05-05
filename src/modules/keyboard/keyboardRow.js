@@ -1,10 +1,12 @@
-export const keyboardRow = (keysArr) => {
+const keyboardRow = (keysArr) => {
   const row = document.createElement("div");
   row.classList.add("keyboard__row");
 
-  for (let key of keysArr) {
+  keysArr.forEach((key) => {
     row.append(key);
-  }
+  });
 
   return row;
-}
+};
+
+export default keyboardRow;
