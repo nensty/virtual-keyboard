@@ -1,6 +1,6 @@
-const keyboardButtonCreation = (key, className) => {
+const keyboardButtonCreation = (key, keyRu, className) => {
   const keyboardButton = document.createElement("div");
-  keyboardButton.textContent = key;
+  keyboardButton.innerHTML = `<span>${key}</span> <span class="hidden">${keyRu}</span>`;
   keyboardButton.classList.add("keyboard__key", "key", className);
 
   return keyboardButton;
