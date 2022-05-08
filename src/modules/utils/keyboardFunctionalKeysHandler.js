@@ -42,7 +42,7 @@ const handlePressFunctionalKeys = (event, key, input) => {
     tempInput.innerHTML += "→";
   }
 
-  if (key === "Space") {
+  if (key === "Space" || key === "") {
     tempInput.innerHTML += " ";
   }
 };
