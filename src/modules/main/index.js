@@ -23,6 +23,10 @@ const handlePressKey = (event) => {
   const allKeys = document.getElementsByClassName("keyboard__key");
   const input = document.getElementsByClassName("main__input")[0];
 
+  // Prevent default behaviour of input field
+  event.preventDefault();
+  input.focus();
+
   if (typeof pressedKey !== "undefined" && !pressedKey.classList.contains("active")) {
     pressedKey.classList.add("active");
   }
@@ -42,6 +46,9 @@ const handlePressKey = (event) => {
 
   handlePressNonFunctionalKeys(event.key, input);
   handlePressFunctionalKeys(event, event.code, input);
+
+  // Set caret position to the end
+  input.setSelectionRange(input.innerHTML.length, input.innerHTML.length);
 };
 
 const handleReleaseKey = ({ code }) => {
